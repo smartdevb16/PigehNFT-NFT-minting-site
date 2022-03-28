@@ -38,12 +38,8 @@
 }
 
 .bg-color-primary {
-  background-color: #080808;
+  background-color: #0071BD;
   /* color: #F65151; */
-}
-
-.bg-color-yellow {
-  background-image: radial-gradient(farthest-side at 50% 50%, rgba(240, 125, 80, 0.5) 30%, rgba(240, 125, 80, 0.1), rgba(240, 125, 80, 0));
 }
 
 .w-fit {
@@ -52,4 +48,22 @@
 
 .h-fit {
   height: fit-content;
+}
+
+.roadmap-item-0 {
+  position: absolute;
+  top: 13%;
+  left: 20%;
+}
+
+.roadmap-item-2 {
+  position: absolute;
+  top: 33%;
+  left: 33%;
+}
+
+.roadmap-item-4 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
 }

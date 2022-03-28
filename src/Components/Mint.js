@@ -1,5 +1,6 @@
 import React from 'react'
 import eventBus from '../Components/EventBus'
+import Header from '../Layout/Header'
 
 class Mint extends React.Component {
 
@@ -8,9 +9,13 @@ class Mint extends React.Component {
 
         this.state = {
             mintCount: 1,
+            connected: false,
+            address: '',
         }
 
         this.changeValue = this.changeValue.bind(this)
+        this.listener = this.listener.bind(this)
+        this.mint = this.mint.bind(this)
     }
 
     changeValue(v) {
@@ -31,40 +36,31 @@ class Mint extends React.Component {
         })
     }
 
+    listener(e) {
+        this.setState({
+            connected: true,
+            address: e.address
+        })
+    }
+
+    componentDidMount() {
+        eventBus.on('connectedWallet', this.listener)
+
+        return eventBus.remove('connectedWallet', this.listener)
+    }
+
     render() {
         return (
-            <div className='relative bg-color-primary w-full min-h-screen flex flex-col justify-end'>
-                <div className='w-full h-full flex justify-between'>
-                    <div className='w-1/4'>
-                        <img className='object-contain' src='/images/left_character.png' alt='character'></img>
+            <div className='relative bg-color-primary w-full flex flex-col pt-12'>
+                <Header />
+                <div className='relative w-full h-fit object-contain'>
+                    <img src='./images/SiteTop.png' alt='logo_img' />
+                    <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 w-fit h-fit z-10 flex flex-col place-items-center space-y-8'>
+                        <h1 className='text-5xl font-bold uppercase'>mint a pigeh</h1>
+                        <button
+                            className='bg-black px-10 py-1 text-white font-bold uppercase hover:opacity-75'
+                            onClick={this.mint}>mint</button>
                     </div>
-                    <div className='w-1/4'>
-                        <img className='object-contain' src='/images/right_character.png' alt='character'></img>
-                    </div>
-                </div>
-                
-                <div className='absolute flex flex-col place-items-center space-y-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                    <div className='flex flex-col place-items-center w-fit h-fit relative z-10 border border-white rounded-xl px-8 py-10'>
-                        <h1 className='text-4xl text-white font-bold border-b border-white py-3'>How Many Gnomies?</h1>
-                        <div className='w-fit h-fit mt-10 p-6 bg-color-yellow'>
-                            <div className='relative aligin-middle text-white text-xl font-bold bg-white bg-opacity-20 border border-white rounded-lg w-fit h-fit px-2 py-1'>
-                                <button onClick={() => this.changeValue(-1)}>
-                                    <span className='font-bold text-xl'>-</span>
-                                </button>
-                                <span className='px-12'>{ this.state.mintCount }</span>
-                                <button onClick={() => this.changeValue(1)}>
-                                    <span className='font-bold text-xl'>+</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <button
-                        className='text-white text-2xl font-bold bg-white bg-opacity-20 border border-white rounded-lg px-7 py-1'
-                        onClick={() => {
-                            this.mint()
-                        }}>
-                            Mint Now
-                    </button>
                 </div>
             </div>
         )
