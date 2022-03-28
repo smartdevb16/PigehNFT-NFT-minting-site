@@ -51,7 +51,7 @@ class Mint extends React.Component {
 
     render() {
         return (
-            <div className='relative bg-color-primary w-full flex flex-col pt-12'>
+            <div className='relative bg-color-primary w-full flex flex-col pt-12' id='home'>
                 <Header />
                 <div className='relative w-full h-fit object-contain'>
                     <img src='./images/SiteTop.png' alt='logo_img' />

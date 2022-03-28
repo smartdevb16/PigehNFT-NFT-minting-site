@@ -43,7 +43,7 @@ export default function Header() {
                 <ul className="flex flex-row items-center space-x-1 list-none">
                     <li className="nav-item">
                         <a className="flex items-center text-xs uppercase font-bold hover:opacity-75"
-                            href='' target="_blank" rel="noopener noreferrer">
+                            href='#home' target="_blank" rel="noopener noreferrer">
                             <span className='cursor-pointer'>
                                 <img className='w-10' src='./images/twitter.png' alt='twitter_img' />
                             </span>
@@ -51,7 +51,7 @@ export default function Header() {
                     </li>
                     <li className="nav-item pr-1">
                         <a className="flex items-center text-xs uppercase font-bold hover:opacity-75"
-                            href='' target="_blank" rel="noopener noreferrer">
+                            href='#home' target="_blank" rel="noopener noreferrer">
                             <span className='cursor-pointer'>
                                 <img className='w-8' src='./images/discord.png' alt='discord_img' />
                             </span>
