@@ -3,7 +3,7 @@ import React from 'react'
 export default function Intro() {
 
     return (
-        <div className='relative w-full border-t border-indigo-300'>
+        <div className='relative w-full'>
             <img src='./images/CloudandCoinExamples.png' alt='cloudandcoin_img' />
             <div className='absolute top-16 flex flex-col place-items-center space-y-3'>
                 <h1 className='text-5xl uppercase font-bold'>what are pigehs</h1>

@@ -4,7 +4,7 @@ import constants from '../Constant/Constants'
 export default function Roadmap() {
 
     return (
-        <div className='relative w-full h-fit border-t border-indigo-300'>
+        <div className='relative w-full h-fit'>
             <img src='./images/BackgroundPath.png' alt='path_img' />
             <div className='absolute top-0 w-full h-full z-10'>
                 <div className='flex w-full h-full tracking-wide'>

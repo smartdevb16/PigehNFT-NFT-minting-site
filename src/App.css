@@ -37,6 +37,11 @@
   }
 }
 
+@font-face {
+  font-family: PermanentMarker;
+  src: url("/fonts/Permanent_Marker/PermanentMarker-Regular.ttf");
+}
+
 .bg-color-primary {
   background-color: #0071BD;
   /* color: #F65151; */

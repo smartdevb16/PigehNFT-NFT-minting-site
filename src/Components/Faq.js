@@ -22,7 +22,7 @@ const faqItem = (item, i) => {
 export default function Faq() {
 
     return (
-        <div className='relative w-full border-t border-indigo-300'>
+        <div className='relative w-full'>
             <img src='./images/BackgroundGrass.png' alt='grass_img' />
             <div className='absolute top-0 w-full h-full uppercase font-bold z-10 space-y-12 pt-10 pl-64'>
                 <h1 className='text-5xl'>questions about pigehs?</h1>
